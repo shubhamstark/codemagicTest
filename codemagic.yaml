@@ -12,12 +12,11 @@ workflows:
         scripts:
             - npm install
             - brew install tree
-            - tree
-            - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
             - |
                 # build Android
                 cd android
                 ./gradlew assembleDebug
+            - tree
         artifacts:
             - android/app/build/outputs/**/*.apk
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
