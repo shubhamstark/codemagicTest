@@ -11,7 +11,7 @@ workflows:
             node: latest
         scripts:
             - npm install
-            - yum install tree
+            - brew install tree
             - tree
             - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
             - |
